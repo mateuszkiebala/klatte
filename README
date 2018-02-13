@@ -1,6 +1,5 @@
-# Interpreter for a simple language Klatte
+Interpreter for a simple language Klatte
 
-## Author: Mateusz Kiebala 359758
 I. Building interpreter:
     1. Call make
 
