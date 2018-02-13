@@ -1,0 +1,16 @@
+int funX(int a, int &b) {
+    b = b + 1;
+    return a + b;
+}
+
+# funZ should be int (int, int&)
+
+int funY(int &x, int (int, int) funZ) {
+    return funZ(10, x);
+}
+
+int a = 42;
+int main() {
+    int wynik = funY(a, funX);
+    return 0;
+}

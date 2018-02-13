@@ -1,0 +1,8 @@
+int f(int(int, int&) foo) {
+    return 0;
+}
+
+
+int main() {
+    return f(int(int x, int y) {return 0;});
+}

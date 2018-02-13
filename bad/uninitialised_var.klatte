@@ -1,0 +1,7 @@
+# Syntax error
+
+int main() {
+    # Variable must be initialised by declaration
+    int x;
+    return 0;
+}

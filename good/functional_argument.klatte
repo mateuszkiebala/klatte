@@ -1,0 +1,23 @@
+# Function as an argument
+
+int funX(int a, int &b) {
+    b = b + 1;
+    return a + b;
+}
+
+int funY(int &x, int (int, int &) funZ) {
+    return funZ(10, x);
+}
+
+int a = 42;
+int main() {
+    int wynik = funY(a, funX);
+    int returnCode = 0;
+    if (wynik == 53 && a == 43) {
+        print true;
+    } else {
+        returnCode = -1;
+    }
+
+    return returnCode;
+}

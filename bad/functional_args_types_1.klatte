@@ -1,0 +1,11 @@
+int f(int(int, int&) foo) {
+    return 0;
+}
+
+int y(int x, int y) {
+    return 0;
+}
+
+int main() {
+    return f(y);
+}

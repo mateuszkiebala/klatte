@@ -1,0 +1,34 @@
+# Comparisons
+int main() {
+    int x = 10, y = 10;
+    int returnCode = 0;
+
+    if (x == y) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    bool a = true, b = false;
+    if (a != b) {
+        print true;
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+    
+    if (x <= y) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    x = 50; y = 42;
+    if (x > y) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    return returnCode;
+}

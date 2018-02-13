@@ -1,0 +1,18 @@
+# Lambda expressions as arguments
+
+int funX(int a, int (int) f) { 
+    return f(a);
+}
+
+int main() {
+    int returnCode = 0;
+    int wynik = funX(10, int (int x) {return x*x;});
+    if (wynik == 100) {
+        print true;
+    } else {
+        print false;
+        returnCode = returnCode - 1;
+    }
+
+    return returnCode;
+}

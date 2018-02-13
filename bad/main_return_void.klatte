@@ -1,0 +1,4 @@
+# main must return int value -> now is void
+int main() {
+    
+}

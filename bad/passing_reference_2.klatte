@@ -1,0 +1,8 @@
+int foo(int &x) {
+    return 0;
+}
+
+int main() {
+    bool y = true;
+    return foo(y);
+}

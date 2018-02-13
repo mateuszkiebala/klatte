@@ -1,0 +1,14 @@
+int funX(int a, int &b) {
+    b = b + 1;
+    return a + b;
+}
+
+int funY(int &x, int (int, int &) funZ) {
+    return funZ(10, x);
+}
+
+int a = 42;
+int main() {
+    int wynik = funY(a, funZ);
+    return 0;
+}

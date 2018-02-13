@@ -1,0 +1,6 @@
+int main() {
+    int x = 19;
+    bool t = true;
+    print x + t;
+    return 0;
+}

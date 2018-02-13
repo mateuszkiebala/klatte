@@ -1,0 +1,149 @@
+-- programs ------------------------------------------------
+
+entrypoints Program ;
+
+Program.   Program ::= [TopDef] ;
+
+FnDef.     TopDef ::= Type Ident "(" [Arg] ")" Block ;
+
+VarDef.    TopDef ::= Type [Item] ";" ;
+
+separator  nonempty TopDef "" ;
+
+ValArg.    Arg ::= Type Ident ;
+
+VarArg.    Arg ::= Type "&" Ident ;
+
+FunArg.    Arg ::= FunType Ident ;
+
+separator  Arg "," ;
+
+-- statements ----------------------------------------------
+
+Block.     Block ::= "{" [Stmt] "}" ;
+
+separator  Stmt "" ;
+
+Empty.     Stmt ::= ";" ;
+
+BStmt.     Stmt ::= Block ;
+
+Decl.      Stmt ::= Type [Item] ";" ;
+
+Init.      Item ::= Ident "=" Expr ;
+
+separator nonempty Item "," ;
+
+Ass.       Stmt ::= Ident "=" Expr  ";" ;
+
+Ret.       Stmt ::= "return" Expr ";" ;
+
+VRet.      Stmt ::= "return" ";" ;
+
+Cond.      Stmt ::= "if" "(" Expr ")" Stmt  ;
+
+CondElse.  Stmt ::= "if" "(" Expr ")" Stmt "else" Stmt  ;
+
+While.     Stmt ::= "while" "(" Expr ")" Stmt ;
+
+ForTo.     Stmt ::= "for" Type Ident "=" Expr "to" Expr "do" Block ;
+
+ForDownTo. Stmt ::= "for" Type Ident "=" Expr "downto" Expr "do" Block ;
+
+Print.     Stmt ::= "print" Expr ";" ;
+
+SExp.      Stmt ::= Expr ";" ;
+
+-- Types ---------------------------------------------------
+
+Int.       Type ::= "int" ;
+
+Bool.      Type ::= "bool" ;
+
+Void.      Type ::= "void" ;
+
+ValType.   FunPartType ::= Type ;
+
+VarType.   FunPartType ::= Type "&" ;
+
+FType.     FunPartType ::= FunType ;
+
+Fun.       FunType ::= Type "(" [FunPartType] ")" ;
+
+separator  Type "," ;
+
+separator  FunType "," ;
+
+separator  FunPartType "," ;
+
+-- Expressions ---------------------------------------------
+
+LExpr.     GeneralExpr ::= LamExpr ;
+
+NExpr.     GeneralExpr ::= Expr ;
+
+ELam.      LamExpr ::= Type "(" [Arg] ")" Block ;
+
+EVar.      Expr6 ::= Ident ;
+
+ELitInt.   Expr6 ::= Integer ;
+
+ELitTrue.  Expr6 ::= "true" ;
+
+ELitFalse. Expr6 ::= "false" ;
+
+EApp.      Expr6 ::= Ident "(" [GeneralExpr] ")" ;
+
+LApp.      Expr6 ::= LamExpr "(" [GeneralExpr] ")" ;
+
+Neg.       Expr5 ::= "-" Expr6 ;
+
+Not.       Expr5 ::= "!" Expr6 ;
+
+EMul.      Expr4 ::= Expr4 MulOp Expr5 ;
+
+EAdd.      Expr3 ::= Expr3 AddOp Expr4 ;
+
+ERel.      Expr2 ::= Expr2 RelOp Expr3 ;
+
+EAnd.      Expr1 ::= Expr2 "&&" Expr1 ;
+
+EOr.       Expr ::= Expr1 "||" Expr ;
+
+coercions  Expr 6 ;
+
+separator  Expr "," ;
+
+separator  LamExpr "," ;
+
+separator  GeneralExpr "," ;
+
+-- operators -----------------------------------------------
+
+Plus.      AddOp ::= "+" ;
+
+Minus.     AddOp ::= "-" ;
+
+Times.     MulOp ::= "*" ;
+
+Div.       MulOp ::= "/" ;
+
+Mod.       MulOp ::= "%" ;
+
+LTH.       RelOp ::= "<" ;
+
+LE.        RelOp ::= "<=" ;
+
+GTH.       RelOp ::= ">" ;
+
+GE.        RelOp ::= ">=" ;
+
+EQU.       RelOp ::= "==" ;
+
+NE.        RelOp ::= "!=" ;
+
+-- comments ------------------------------------------------
+
+comment    "#" ;
+
+comment    "/*" "*/" ;

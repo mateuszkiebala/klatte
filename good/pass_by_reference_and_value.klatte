@@ -1,0 +1,35 @@
+
+# Reference / value passing
+
+void foo(int &b) {
+    while (b > 10) {
+        b = b - 1;
+    }
+}
+
+
+void boo(int x, int &a) {
+    a = x;
+}
+
+int main() {
+    int x = 50;
+    int returnCode = 0;
+    foo(x);
+    print x;
+    if (x == 10) {
+        returnCode = 0;
+    } else {
+        returnCode = -1;
+    }
+
+    boo(99, x);
+    print x;
+
+    if (x == 99) {
+        returnCode = 0;
+    } else {
+        returnCode = -1;
+    }
+    return returnCode;
+}

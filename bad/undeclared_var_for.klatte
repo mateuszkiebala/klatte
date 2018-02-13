@@ -1,0 +1,6 @@
+int main() {
+    for int i = 0 downto x + 1 do {
+        print i;
+    }
+    return 0;
+}

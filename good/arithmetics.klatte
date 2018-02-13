@@ -1,0 +1,61 @@
+# Arithmetics, conditions
+int main() {
+    int g = 2 + 1 + 56 * 0 - 7;
+    print g;
+    int x = 5;
+    int y = 8;
+    int returnCode = 0;
+
+    if (x * y == 40) {
+        print 40;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    bool b = true;
+    if (b || x * y != 40) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    x = 50;
+    if (x - y * 10 == -30) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    y = 10;
+    if (x + y / y == 51) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    if (x % y == 0) {
+        returnCode = returnCode;
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    int z = (x - y) * 10 + (10 + 7);
+    if (z == 417) {
+        print 417; 
+    } else {
+        returnCode = returnCode - 1;
+    }
+
+    if (false) {
+        returnCode = returnCode - 1;
+    } else {
+        returnCode = returnCode;
+        if (true == true) {
+            returnCode = returnCode;
+        } else {
+            returnCode = returnCode - 1;
+        }
+    }
+
+    return returnCode;
+}

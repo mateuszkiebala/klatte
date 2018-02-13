@@ -1,0 +1,33 @@
+# Variable shadowing
+
+
+int x = 10;
+
+void foo() {
+    print x;
+    int x = 99;
+    print x;
+}
+
+void boo(int x) {
+    print x;
+    int x = 909090;
+    print x;
+}
+
+int main() {
+    foo();
+    print x;
+
+    {
+        print x;
+        int x = 42;
+        print x;
+    };
+    print x;
+
+    boo(500000);
+    print x;
+
+    return 0;
+}

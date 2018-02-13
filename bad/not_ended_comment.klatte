@@ -1,0 +1,6 @@
+# Syntax error
+*/ 
+
+int main() {
+    return 0;
+}

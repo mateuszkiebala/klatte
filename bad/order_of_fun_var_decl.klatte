@@ -1,0 +1,9 @@
+int f() {
+    return a;
+}
+
+int a = 10;
+
+int main() {
+    return f();
+}

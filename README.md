@@ -1,2 +1,47 @@
-# klatte
-Interpreter for a simple language Klatte
+# Interpreter for a simple language Klatte
+
+## Author: Mateusz Kiebala 359758
+I. Building interpreter:
+    1. Call make
+
+II. Using interpreter:
+    There are 2 possible ways to run an interpreter:
+    1. Program path as argument: ./interpreter <path_to_program_to_interpret>
+    2. From standard input: ./interpreter
+
+III. Klatte language:
+    1. two types: int, bool
+    2. arithmetics: + - * / % ( )
+    3. logical operations: && ||
+    4. conditional statements: if (...) {}, if (...) {} then {}
+    4. loops: while, for .. to, for .. downto
+    5. recursive functions
+    6. function argument types: value, reference, function
+    7. function return types: void, int, bool
+    8. lambda expression
+    9. variable shadowing
+    10. dynamic errors
+    11. built-in print statement
+    12. comments: #, /* .. */
+
+IV. Solution description:
+    1. In program there must be always main function with signature "int main()"
+       which returns int value. If returned value is >= 0 then program has been
+       successfully interpreted, otherwise not.
+    2. Types are checked during interpretation (there is no phase of type 
+       checking before run).
+    3. When dynamic error occur (eg. division by zero, type error, undeclarated
+       variable) then interpretation is immediately stopped.
+    4. Environment consists of functions environment and variables environment.
+       It keeps locations (int) for functions/variables.
+    5. Store consists of functions store, variable store and two counters.
+       Functions/variable store keeps mapping between locations and 
+       function/variable description.
+       Counters are values that keep numbers of already declarated functions/variables.
+    6. Store is always cleaned out of unnecessary functions/variables 
+       after going out of a block.
+       Program saves counters value before running a block, applying a function,
+       running "for loop" (everywhere new declarations appear). Then after 
+       quitting, program deletes all mapping in the store that happened 
+       in that time.
+

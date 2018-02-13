@@ -1,0 +1,30 @@
+# Lambda expression - declaration and evoking
+
+int main () {
+    int a = 10;
+    int returnCode = 0;
+    int wynik = int (int x, int &y) {
+        y = y + 2;
+        return x * y; } (2, a);
+
+    if (a == 12 && wynik == 24) {
+        print true;
+    } else {
+        print false;
+        returnCode = returnCode - 1;
+    }
+
+    a = 10;
+    int wynik2 = int (int x, int y) {
+        y = y + 2;
+        return x * y; } (2, a);
+
+    if (a == 10 && wynik2 == 24) {
+        print true;
+    } else {
+        print false;
+        returnCode = returnCode - 1;
+    }
+
+    return returnCode;
+}

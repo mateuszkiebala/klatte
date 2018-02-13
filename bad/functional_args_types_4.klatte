@@ -1,0 +1,9 @@
+int main() {
+    int y = 5;
+    # f should be void
+    void (int &x, int (int &) f) {
+        f(x);
+    } (y, void (int &a) {a = a*1000; return; });
+
+    return 0;
+}

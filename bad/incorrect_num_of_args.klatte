@@ -1,0 +1,8 @@
+void fun(int x, int z, bool f) {
+    return;
+} 
+
+int main() {
+    fun(8,1);
+    return 0;
+}

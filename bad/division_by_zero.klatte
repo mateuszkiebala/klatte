@@ -1,0 +1,8 @@
+# Division by 0
+
+int main() {
+    int x = 10 / 0;
+    int y = 99;
+    print y;
+    return 0;
+}

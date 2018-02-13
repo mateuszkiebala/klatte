@@ -1,0 +1,17 @@
+# Lambda with lambda argument
+int main() {
+    int y = 5;
+    int returnCode = 0;
+    void (int &x, void (int &) f) {
+        f(x);
+    } (y, void (int &a) {a = a*1000; return; });
+
+    if (y == 5000) {
+        print true;
+    } else {
+        print false;
+        returnCode = returnCode - 1;
+    }
+
+    return returnCode;
+}
