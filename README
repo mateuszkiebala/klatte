@@ -1,4 +1,5 @@
-Interpreter for a simple language Klatte
+Project for the Programming Languages and Paradigms course 2017 @ MIMUW.
+Interpreter for a simple language Klatte.
 
 I. Building interpreter:
     1. Call make
